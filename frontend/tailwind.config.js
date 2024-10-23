@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-button-color": "var(--primary-button-color)",
+        "primary-color": "var(--primary-color)",
+        "secondary-color": "var(--secondary-color)",
       },
     },
   },

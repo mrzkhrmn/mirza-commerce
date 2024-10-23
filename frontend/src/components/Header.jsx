@@ -1,14 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
+import { IoCartOutline } from "react-icons/io5";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { FiUser } from "react-icons/fi";
 
 export const Header = () => {
   const user = true;
-  const activeNavClass = "left-0 w-full";
-  const navClass = "left-1/2 w-0 group-hover:left-0 group-hover:w-full";
+  const activeNavClass = "left-0 w-full ";
+  const navClass = "left-0 w-0 group-hover:left-1/2 group-hover:w-full";
 
   return (
-    <header className="w-full">
-      <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+    <header className="w-full shadow-md">
+      <div className="max-w-7xl mx-auto flex justify-between items-center py-4">
         <Link to={"/"}>
           <h1 className=" md:text-2xl text-xl">M-Commerce.</h1>
         </Link>
@@ -18,7 +21,7 @@ export const Header = () => {
               <>
                 <span>Home</span>
                 <span
-                  className={`absolute -bottom-1 h-0.5 bg-black transition-all duration-300 ${
+                  className={`absolute -bottom-1 h-0.5 bg-primary-color transition-all duration-300 ${
                     isActive ? activeNavClass : navClass
                   }`}
                 ></span>
@@ -30,7 +33,7 @@ export const Header = () => {
               <>
                 <span>Contact</span>
                 <span
-                  className={`absolute -bottom-1 h-0.5 bg-black transition-all duration-300 ${
+                  className={`absolute -bottom-1 h-0.5 bg-primary-color transition-all duration-300 ${
                     isActive ? activeNavClass : navClass
                   }`}
                 ></span>
@@ -42,7 +45,7 @@ export const Header = () => {
               <>
                 <span>About</span>
                 <span
-                  className={`absolute -bottom-1 h-0.5 bg-black transition-all duration-300 ${
+                  className={`absolute -bottom-1 h-0.5 bg-primary-color transition-all duration-300 ${
                     isActive ? activeNavClass : navClass
                   }`}
                 ></span>
@@ -55,7 +58,7 @@ export const Header = () => {
                 <>
                   <span>Sign up</span>
                   <span
-                    className={`absolute -bottom-1 h-0.5 bg-black transition-all duration-300 ${
+                    className={`absolute -bottom-1 h-0.5 bg-primary-color transition-all duration-300 ${
                       isActive ? activeNavClass : navClass
                     }`}
                   ></span>
@@ -68,15 +71,39 @@ export const Header = () => {
           </button>
         </div>
 
-        <div className="relative hidden md:block">
-          <input
-            type="text"
-            id="searchTerm"
-            className="bg-gray-200 py-1 px-2 focus:outline-none text-lg rounded-md"
-          />
-          <button className="absolute right-2 top-2">
-            <FiSearch />
-          </button>
+        <div className="flex items-center gap-4">
+          <div className="relative hidden md:block">
+            <input
+              type="text"
+              id="searchTerm"
+              className="bg-gray-200 py-1 px-2 focus:outline-none text-lg rounded-md"
+            />
+            <button className="absolute right-2 top-2">
+              <FiSearch />
+            </button>
+          </div>
+          {user && (
+            <Link to={"/wishlist"} className="relative">
+              <IoMdHeartEmpty size={30} />
+              <span className="absolute -right-1.5 -top-1.5 text-white bg-primary-color text-[0.7rem] rounded-full py-0.5 px-1">
+                4
+              </span>
+            </Link>
+          )}
+          <Link to={"/cart"} className="relative">
+            <IoCartOutline size={30} />
+            <span className="absolute -right-1.5 -top-1.5 text-white bg-primary-color text-[0.7rem] rounded-full py-0.5 px-1">
+              4
+            </span>
+          </Link>
+          {user && (
+            <Link
+              to={"/account"}
+              className="bg-primary-color text-white rounded-full p-2"
+            >
+              <FiUser size={20} />
+            </Link>
+          )}
         </div>
       </div>
     </header>

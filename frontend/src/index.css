@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --primary-button-color: #db4444;
+  --primary-color: #db4444;
+  --secondary-color: #df5e5e;
 }
 
 * {
