@@ -1,17 +1,40 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { useLoginMutation } from "../redux/api/authApiSlice.js";
+import { useDispatch } from "react-redux";
+import {
+  loginFailure,
+  loginStart,
+  loginSuccess,
+} from "../redux/slices/authSlice.js";
 
 export const LoginPage = () => {
+  const [login, { isLoading: isLoginLoading }] = useLoginMutation();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
   });
-  const isLoginLoading = false;
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  function handleChange(e) {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
+    dispatch(loginStart());
+    try {
+      const res = await login(formData).unwrap();
+      dispatch(loginSuccess(res));
+      dispatch(navigate("/"));
+    } catch (error) {
+      console.log(error.message);
+      dispatch(loginFailure());
+    }
   }
   return (
     <div className="bg-[#532B2B] min-h-screen  w-screen flex min-w-[30rem] px-0 xl:px-32">
