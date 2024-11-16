@@ -1,14 +1,38 @@
 import { useState } from "react";
 import { FiUser } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  logoutFailure,
+  logoutStart,
+  logoutSuccess,
+} from "../../redux/slices/authSlice";
+import { useLogoutMutation } from "../../redux/api/authApiSlice";
 
-export const UserButton = ({ handleLogout }) => {
+export const UserButton = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const [logout, { isLoading }] = useLogoutMutation();
 
   const handleClick = (link) => {
     setIsUserMenuOpen(false);
     navigate(link);
+  };
+
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    dispatch(logoutStart());
+    try {
+      await logout().unwrap();
+      dispatch(logoutSuccess());
+      navigate("/login");
+    } catch (error) {
+      console.log(error.message);
+      dispatch(logoutFailure());
+    }
   };
 
   return (
