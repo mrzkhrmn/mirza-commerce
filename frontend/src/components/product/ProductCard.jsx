@@ -15,7 +15,7 @@ export const ProductCard = ({ discount }) => {
         ></div>
         <img
           className=" object-contain"
-          src="https://www.sunshineit.com.bd/wp-content/uploads/2020/11/Logitech-F710-Wireless-Gamepad.png"
+          src="https://smartdeal.com.bd/public/uploads/all/fJEan2GLy1k6cqlXLnwwvxIa47wHufc8bZDqY7RT.jpg"
           alt=""
         />
         <button

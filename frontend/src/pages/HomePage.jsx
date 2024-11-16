@@ -1,5 +1,5 @@
+import { useSelector } from "react-redux";
 import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
 import { BestSellingProducts } from "../components/HomePage/BestSellingProducts";
 import { BrowseByCategory } from "../components/HomePage/BrowseByCategory";
 import { ExploreOurProducts } from "../components/HomePage/ExploreOurProducts";
@@ -10,6 +10,8 @@ import { Sidebar } from "../components/HomePage/Sidebar";
 import { SpecialProduct } from "../components/HomePage/SpecialProduct";
 
 export const HomePage = () => {
+  const { authUser } = useSelector((state) => state.auth);
+  console.log(authUser);
   return (
     <div className="w-full h-screen">
       <div className="max-w-7xl mx-auto py-10">

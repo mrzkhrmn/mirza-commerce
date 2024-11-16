@@ -1,19 +1,53 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { Header } from "../components/Header";
+import { useDispatch } from "react-redux";
+import {
+  signupFailure,
+  signupStart,
+  signupSuccess,
+} from "../redux/slices/authSlice";
+import { useSignupMutation } from "../redux/api/authApiSlice";
 
 export const SignupPage = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
+    terms: false,
   });
-  const isSignupLoading = false;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [signup, { isLoading: isSignupLoading }] = useSignupMutation();
 
   async function handleSubmit(e) {
     e.preventDefault();
+    try {
+      dispatch(signupStart());
+      if (formData.terms) {
+        const res = await signup(formData).unwrap();
+        dispatch(signupSuccess(res));
+        dispatch(navigate("/"));
+        console.log(formData);
+      } else {
+        console.error("You must accept terms and conditions!");
+      }
+    } catch (error) {
+      dispatch(signupFailure(error.message));
+      console.error(error.message);
+    }
   }
+
+  function handleChange(e) {
+    if (e.target.id === "terms") {
+      setFormData({ ...formData, terms: !formData.terms });
+    } else {
+      setFormData({ ...formData, [e.target.id]: e.target.value });
+    }
+  }
+
+  console.log(formData);
 
   return (
     <>

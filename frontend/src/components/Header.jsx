@@ -3,6 +3,8 @@ import { FiSearch } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { FiUser } from "react-icons/fi";
+import { useState } from "react";
+import { UserButton } from "./Header/UserButton";
 
 export const Header = () => {
   const user = true;
@@ -76,7 +78,8 @@ export const Header = () => {
             <input
               type="text"
               id="searchTerm"
-              className="bg-gray-200 py-1 px-2 focus:outline-none text-lg rounded-md"
+              placeholder="search for your need"
+              className="bg-gray-200 py-1 px-2 focus:outline-none rounded-md"
             />
             <button className="absolute right-2 top-2">
               <FiSearch />
@@ -96,14 +99,7 @@ export const Header = () => {
               4
             </span>
           </Link>
-          {user && (
-            <Link
-              to={"/account"}
-              className="bg-primary-color text-white rounded-full p-2"
-            >
-              <FiUser size={20} />
-            </Link>
-          )}
+          {user && <UserButton />}
         </div>
       </div>
     </header>
