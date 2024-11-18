@@ -24,16 +24,7 @@ export const ExploreOurProducts = () => {
           </button>
         </div>
       </div>
-      <div className="mt-5 flex justify-between items-center flex-wrap gap-8">
-        <ProductCard discount={false} />
-        <ProductCard discount={false} />
-        <ProductCard discount={false} />
-        <ProductCard discount={false} />
-        <ProductCard discount={false} />
-        <ProductCard discount={false} />
-        <ProductCard discount={false} />
-        <ProductCard discount={false} />
-      </div>
+      <div className="mt-5 flex justify-between items-center flex-wrap gap-8"></div>
       <div className="flex items-center justify-center my-10">
         <button className="bg-primary-color hover:bg-secondary-color transition duration-200 text-white py-3 px-8 rounded-md hover">
           View All Products

@@ -6,7 +6,6 @@ import {
 
 const router = express.Router();
 
-router.get("/:id", getProductById);
 router.get("/best", getBestSellingProducts);
 
 export default router;

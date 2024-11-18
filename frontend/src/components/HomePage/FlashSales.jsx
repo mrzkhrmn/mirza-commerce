@@ -29,15 +29,7 @@ export const FlashSales = () => {
           </button>
         </div>
       </div>
-      <div className="mt-5 flex gap-6 overflow-x-auto">
-        <ProductCard discount={true} />
-        <ProductCard discount={true} />
-        <ProductCard discount={true} />
-        <ProductCard discount={true} />
-        <ProductCard discount={true} />
-        <ProductCard discount={true} />
-        <ProductCard discount={true} />
-      </div>
+      <div className="mt-5 flex gap-6 overflow-x-auto"></div>
       <div className="flex items-center justify-center my-10">
         <button className="bg-primary-color hover:bg-secondary-color transition duration-200 text-white py-3 px-8 rounded-md hover">
           View All Products

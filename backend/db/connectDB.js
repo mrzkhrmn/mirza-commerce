@@ -8,6 +8,7 @@ export const connectDB = async () => {
     //const conn = await mongoose
     //.connect(process.env.MONGO_URI)
     //.then(async () => {
+    //await Product.deleteMany();
     //await Product.insertMany(data);
     //console.log(`Data added to DB`);
     //});

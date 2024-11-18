@@ -19,7 +19,7 @@ export const getBestSellingProducts = async (req, res) => {
   try {
     const products = await Product.aggregate([
       {
-        $addFields: { averageRating: { $avg: "$ratings" } },
+        $addFields: { averageRating: { $avg: "ratings" } },
       },
       { $sort: { averageRating: -1 } },
       { $limit: 4 },
