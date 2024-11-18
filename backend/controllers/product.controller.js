@@ -11,5 +11,23 @@ export const getProductById = async (req, res) => {
     res.status(200).json(product);
   } catch (error) {
     res.status(500).json({ error: error.message });
+    console.log(`Error in getProductById ${error.message}`);
+  }
+};
+
+export const getBestSellingProducts = async (req, res) => {
+  try {
+    const products = await Product.aggregate([
+      {
+        $addFields: { averageRating: { $avg: "$ratings" } },
+      },
+      { $sort: { averageRating: -1 } },
+      { $limit: 4 },
+    ]);
+
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+    console.log(`Error in getBestSellingProducts ${error.message}`);
   }
 };
