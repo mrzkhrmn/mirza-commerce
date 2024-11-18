@@ -1,5 +1,7 @@
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { ProductCard } from "../product/ProductCard";
+import { useEffect, useState } from "react";
+import CountdownTimer from "../CountdownTimer";
 
 export const FlashSales = () => {
   return (
@@ -15,27 +17,7 @@ export const FlashSales = () => {
           </div>
           <div className="flex items-end gap-8">
             <h1 className="text-4xl">Flash Sales</h1>
-            <div className="flex items-center gap-4">
-              <div className="flex flex-col font-semibold">
-                <span className="text-sm uppercase">Days</span>
-                <span className="text-4xl">03</span>
-              </div>
-              <span className="text-3xl text-primary-color mt-4">:</span>
-              <div className="flex flex-col font-semibold">
-                <span className="text-sm uppercase">Hours</span>
-                <span className="text-4xl">23</span>
-              </div>
-              <span className="text-3xl text-primary-color mt-4">:</span>
-              <div className="flex flex-col font-semibold">
-                <span className="text-sm uppercase">Minutes</span>
-                <span className="text-4xl">19</span>
-              </div>
-              <span className="text-3xl text-primary-color mt-4">:</span>
-              <div className="flex flex-col font-semibold">
-                <span className="text-sm uppercase">Seconds</span>
-                <span className="text-4xl">56</span>
-              </div>
-            </div>
+            <CountdownTimer targetDate={"2024-11-31T12:00:00"} />
           </div>
         </div>
         <div className="flex items-end gap-2 text-black">
