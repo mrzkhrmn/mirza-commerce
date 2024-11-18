@@ -3,13 +3,6 @@ import { FiSearch } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { UserButton } from "./Header/UserButton";
-import { useDispatch } from "react-redux";
-import {
-  logoutFailure,
-  logoutStart,
-  logoutSuccess,
-} from "../redux/slices/authSlice";
-import { useLogoutMutation } from "../redux/api/authApiSlice";
 
 export const Header = () => {
   const user = true;
