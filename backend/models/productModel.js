@@ -8,12 +8,7 @@ const productSchema = mongoose.Schema(
     ratings: { type: Array, default: [] },
     stock: { type: Number, required: true, default: 0 },
     description: { type: String, required: true },
-    images: {
-      type: Array,
-      default: [
-        "https://smartdeal.com.bd/public/uploads/all/fJEan2GLy1k6cqlXLnwwvxIa47wHufc8bZDqY7RT.jpg",
-      ],
-    },
+    images: [String],
     attributes: {
       sizes: [
         {

@@ -5,7 +5,7 @@ export const productApiSLice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getProduct: builder.query({
       query: (id) => ({
-        url: `${PRODUCT_URL}/${id}`,
+        url: `${PRODUCT_URL}/product/${id}`,
       }),
     }),
     getBestSellingProducts: builder.query({

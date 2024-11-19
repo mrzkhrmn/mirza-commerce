@@ -8,7 +8,7 @@ import {
 
 const router = express.Router();
 
-router.get("/:id", getProductById);
+router.get("/product/:id", getProductById);
 router.get("/best", getBestSellingProducts);
 router.get("/flash", getFlashSalesProducts);
 router.get("/explore", getExploreProducts);
