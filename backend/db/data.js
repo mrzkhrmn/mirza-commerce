@@ -18,7 +18,7 @@ export const data = [
         { size: "L", stock: 15 },
         { size: "XL", stock: 5 },
       ],
-      colours: ["Black", "White", "Blue"],
+      colours: ["black", "white", "blue"],
     },
   },
   {
@@ -35,7 +35,7 @@ export const data = [
     ],
     attributes: {
       sizes: [],
-      colours: ["Black", "White"],
+      colours: ["black", "white"],
     },
   },
   {
@@ -57,7 +57,7 @@ export const data = [
         { size: "41", stock: 10 },
         { size: "42", stock: 5 },
       ],
-      colours: ["Black", "Gray"],
+      colours: ["black", "gray"],
     },
   },
   {
@@ -73,7 +73,7 @@ export const data = [
     ],
     attributes: {
       sizes: [],
-      colours: ["Brown", "Black"],
+      colours: ["brown", "black"],
     },
   },
   {
@@ -95,7 +95,7 @@ export const data = [
         { size: "L", stock: 15 },
         { size: "XL", stock: 5 },
       ],
-      colours: ["Black", "White", "Blue"],
+      colours: ["black", "white", "blue"],
     },
   },
   {
@@ -112,7 +112,7 @@ export const data = [
     ],
     attributes: {
       sizes: [],
-      colours: ["Black", "White"],
+      colours: ["black", "white"],
     },
   },
   {
@@ -134,7 +134,7 @@ export const data = [
         { size: "41", stock: 10 },
         { size: "42", stock: 5 },
       ],
-      colours: ["Black", "Gray"],
+      colours: ["black", "gray"],
     },
   },
   {
@@ -150,7 +150,7 @@ export const data = [
     ],
     attributes: {
       sizes: [],
-      colours: ["Brown", "Black"],
+      colours: ["brown", "black"],
     },
   },
 ];

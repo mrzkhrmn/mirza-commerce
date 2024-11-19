@@ -9,15 +9,18 @@ import { useEffect, useState } from "react";
 export const ProductDetails = () => {
   const { id } = useParams();
   const { data: product } = useGetProductQuery(id);
-  const [selectedImage, setSelectedImage] = useState(product?.images[0]);
+  const [selectedImage, setSelectedImage] = useState("");
+  const [rating, setRating] = useState(0);
 
   useEffect(() => {
     if (product?.images.length > 0) {
       setSelectedImage(product?.images[0]);
+      let sumRatings = product.ratings.reduce((acc, curr) => acc + curr, 0);
+      setRating(sumRatings / product.ratings.length);
     }
   }, [product]);
 
-  console.log(product);
+  console.log(rating);
   return (
     product && (
       <div className="w-full h-screen">
@@ -40,7 +43,10 @@ export const ProductDetails = () => {
             <div className="max-w-[400px]">
               <h1 className="font-bold text-2xl">{product.title}</h1>
               <div className="flex items-center gap-2 mt-2">
-                <Stars />
+                <Stars rating={rating} />
+                <p className=" text-gray-500 text-sm">
+                  ({product.ratings.length} reviews)
+                </p>
                 <p>
                   | <span className="text-green-500">In Stock</span>
                 </p>
