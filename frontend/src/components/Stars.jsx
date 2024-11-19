@@ -29,8 +29,8 @@ export const Stars = ({ rating }) => {
   }
   return (
     <div className="flex items-center gap-2">
-      <div className="flex items-center">{starsArray}</div>{" "}
-      <p className=" text-gray-500 text-sm">(88)</p>
+      <div className="flex items-center gap-[3px]">{starsArray}</div>{" "}
+      <p className=" text-gray-500 text-sm">(88 reviews)</p>
     </div>
   );
 };

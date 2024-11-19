@@ -15,7 +15,7 @@ export const ProductCard = ({ product }) => {
     <div className="">
       <div className="w-[270px] h-[240px] bg-gray-100 relative  overflow-hidden group">
         <div className="relative group w-full h-full">
-          <Link to={`/${_id}`}>
+          <Link to={`/product/${_id}`}>
             <img
               className="object-contain w-full h-full -z-10"
               src={images[0]}

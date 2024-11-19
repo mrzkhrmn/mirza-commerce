@@ -13,7 +13,7 @@ export const HomePage = () => {
   const { authUser } = useSelector((state) => state.auth);
   console.log(authUser);
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-full">
       <div className="max-w-7xl mx-auto py-10">
         <div className="flex h-[400px] gap-10 items-center">
           <Sidebar />
@@ -33,7 +33,6 @@ export const HomePage = () => {
         <FeaturedProducts />
         <Services />
       </div>
-      <Footer />
     </div>
   );
 };
