@@ -2,8 +2,15 @@ import { CiHeart } from "react-icons/ci";
 import { Stars } from "../components/Stars";
 import { TbTruckDelivery } from "react-icons/tb";
 import { GiRecycle } from "react-icons/gi";
+import { useParams } from "react-router-dom";
+import { useGetProductQuery } from "../redux/api/productApiSlice";
 
 export const ProductDetails = () => {
+  const { id } = useParams();
+
+  const { data: product } = useGetProductQuery(id);
+
+  console.log(product);
   return (
     <div className="w-full h-screen">
       <div className="max-w-7xl mx-auto py-10">

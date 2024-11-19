@@ -3,6 +3,11 @@ import { apiSlice } from "./apiSlice";
 
 export const productApiSLice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
+    getProduct: builder.query({
+      query: (id) => ({
+        url: `${PRODUCT_URL}/${id}`,
+      }),
+    }),
     getBestSellingProducts: builder.query({
       query: () => ({
         url: `${PRODUCT_URL}/best`,
@@ -22,6 +27,7 @@ export const productApiSLice = apiSlice.injectEndpoints({
 });
 
 export const {
+  useGetProductQuery,
   useGetBestSellingProductsQuery,
   useGetFlashSalesProductsQuery,
   useGetExploreProductsQuery,
