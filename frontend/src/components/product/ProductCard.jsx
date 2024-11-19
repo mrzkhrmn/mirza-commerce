@@ -1,28 +1,27 @@
-import { useCallback, useState } from "react";
 import { Stars } from "../Stars";
 import { CiHeart } from "react-icons/ci";
 import { IoEyeOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export const ProductCard = ({ product }) => {
-  const { title, price, images, discountPercentage, ratings } = product;
+  const { _id, title, price, images, discountPercentage, ratings } = product;
+
   const discountedPrice = Number(
     price - (price * discountPercentage) / 100
   ).toFixed(2);
-  const [isHovered, setIsHovered] = useState(false);
   const rating = ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length;
-
-  console.log("Discounted price: " + discountedPrice);
-  console.log("Price: " + price);
 
   return (
     <div className="">
       <div className="w-[270px] h-[240px] bg-gray-100 relative  overflow-hidden group">
         <div className="relative group w-full h-full">
-          <img
-            class="object-contain w-full h-full -z-10"
-            src={"https://www.renderhub.com/dennycg/gamepad1/gamepad1-03.jpg"}
-            alt="Product Image"
-          />
+          <Link to={`/${_id}`}>
+            <img
+              className="object-contain w-full h-full -z-10"
+              src={images[0]}
+              alt="Product Image"
+            />
+          </Link>
           <button
             className="absolute bottom-0 left-0 w-full bg-black text-white text-center 
             transition-all duration-300 ease-in-out h-0 opacity-0 pointer-events-none 

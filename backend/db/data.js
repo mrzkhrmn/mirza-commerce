@@ -8,8 +8,8 @@ export const data = [
     stock: 0,
     description: "Comfortable and breathable cotton t-shirt for daily wear.",
     images: [
-      "https://example.com/images/tshirt1.jpg",
-      "https://example.com/images/tshirt2.jpg",
+      "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
+      "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
     ],
     attributes: {
       sizes: [
@@ -30,8 +30,8 @@ export const data = [
     stock: 100,
     description: "Ergonomic wireless mouse with a 2-year battery life.",
     images: [
-      "https://example.com/images/mouse1.jpg",
-      "https://example.com/images/mouse2.jpg",
+      "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
+      "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
     ],
     attributes: {
       sizes: [],
@@ -47,8 +47,8 @@ export const data = [
     stock: 0,
     description: "Lightweight and comfortable running shoes for all terrains.",
     images: [
-      "https://example.com/images/shoes1.jpg",
-      "https://example.com/images/shoes2.jpg",
+      "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
+      "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
     ],
     attributes: {
       sizes: [
@@ -68,7 +68,9 @@ export const data = [
     ratings: [4, 4, 5],
     stock: 50,
     description: "Durable leather wallet with multiple compartments.",
-    images: ["https://example.com/images/wallet1.jpg"],
+    images: [
+      "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
+    ],
     attributes: {
       sizes: [],
       colours: ["Brown", "Black"],
@@ -83,8 +85,8 @@ export const data = [
     stock: 0,
     description: "Comfortable and breathable cotton t-shirt for daily wear.",
     images: [
-      "https://example.com/images/tshirt1.jpg",
-      "https://example.com/images/tshirt2.jpg",
+      "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
+      "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
     ],
     attributes: {
       sizes: [
@@ -105,8 +107,8 @@ export const data = [
     stock: 100,
     description: "Ergonomic wireless mouse with a 2-year battery life.",
     images: [
-      "https://example.com/images/mouse1.jpg",
-      "https://example.com/images/mouse2.jpg",
+      "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
+      "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
     ],
     attributes: {
       sizes: [],
@@ -122,8 +124,8 @@ export const data = [
     stock: 0,
     description: "Lightweight and comfortable running shoes for all terrains.",
     images: [
-      "https://example.com/images/shoes1.jpg",
-      "https://example.com/images/shoes2.jpg",
+      "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
+      "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
     ],
     attributes: {
       sizes: [
@@ -136,14 +138,16 @@ export const data = [
     },
   },
   {
-    title: "Leather Wallet",
-    price: 24.99,
+    title: "BestLeather Wallet",
+    price: 44.99,
     category: "Daily",
     discountPercentage: 0,
     ratings: [4, 4, 5],
     stock: 50,
     description: "Durable leather wallet with multiple compartments.",
-    images: ["https://example.com/images/wallet1.jpg"],
+    images: [
+      "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
+    ],
     attributes: {
       sizes: [],
       colours: ["Brown", "Black"],

@@ -9,7 +9,10 @@ export const NotFoundPage = () => {
         The page that you are looking for doesn't exist or has been removed!
       </p>
       <div>
-        <Link className="text-white bg-secondary-color px-4 py-2 text-xl rounded-full font-bold">
+        <Link
+          to={"/"}
+          className="text-white bg-secondary-color px-4 py-2 text-xl rounded-full font-bold"
+        >
           Go Home
         </Link>
       </div>
