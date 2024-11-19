@@ -1,11 +1,21 @@
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { ProductCard } from "../product/ProductCard";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CountdownTimer from "../CountdownTimer";
 import { useGetFlashSalesProductsQuery } from "../../redux/api/productApiSlice";
 
 export const FlashSales = () => {
   const { data: flashSaleProducts } = useGetFlashSalesProductsQuery();
+
+  const ref = useRef();
+
+  function handleScroll(offset, direction) {
+    if (ref.current && direction === "right") {
+      ref.current.scrollLeft += offset;
+    } else if (ref.current && direction === "left") {
+      ref.current.scrollLeft -= offset;
+    }
+  }
 
   return (
     flashSaleProducts && (
@@ -25,15 +35,21 @@ export const FlashSales = () => {
             </div>
           </div>
           <div className="flex items-end gap-2 text-black">
-            <button className="text-xl bg-gray-200 hover:bg-gray-300 transition duration-200 p-2 rounded-full">
+            <button
+              className="text-xl bg-gray-200 hover:bg-gray-300 transition duration-200 p-2 rounded-full"
+              onClick={() => handleScroll(80, "left")}
+            >
               <FaArrowLeftLong />
             </button>
-            <button className="text-xl bg-gray-200 hover:bg-gray-300 transition duration-200 p-2 rounded-full">
+            <button
+              className="text-xl bg-gray-200 hover:bg-gray-300 transition duration-200 p-2 rounded-full"
+              onClick={() => handleScroll(80, "right")}
+            >
               <FaArrowRightLong />
             </button>
           </div>
         </div>
-        <div className="mt-5 flex gap-6 overflow-x-auto">
+        <div className="mt-5 flex gap-6 overflow-x-auto" ref={ref}>
           {flashSaleProducts.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
