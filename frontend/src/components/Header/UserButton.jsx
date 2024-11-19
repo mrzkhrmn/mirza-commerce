@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { FiUser } from "react-icons/fi";
+import { FiUser, FiShoppingCart } from "react-icons/fi";
+import { CiLogout } from "react-icons/ci";
+
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
@@ -8,6 +10,7 @@ import {
   logoutSuccess,
 } from "../../redux/slices/authSlice";
 import { useLogoutMutation } from "../../redux/api/authApiSlice";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
 
 export const UserButton = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -42,39 +45,47 @@ export const UserButton = () => {
     >
       <FiUser size={20} />
       <div
-        className={`absolute bg-[#da4443] top-8 left-8 flex flex-col rounded-md ${
-          isUserMenuOpen ? "w-[100px] " : "w-0 px-0"
+        className={`absolute  top-8 right-8 flex flex-col rounded-md ${
+          isUserMenuOpen ? "w-[175px] " : "w-0 px-0"
         }
-                ${isUserMenuOpen ? "h-[160px] " : "h-0 py-0"}
+                ${isUserMenuOpen ? "h-[200px] " : "h-0 py-0"}
                   transition-all duration-200 overflow-hidden`}
       >
         {isUserMenuOpen && (
-          <>
+          <div
+            className="h-full w-full bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40
+            flex flex-col
+          "
+          >
             <button
               onClick={() => handleClick("/account")}
-              className="hover:bg-secondary-color flex justify-center items-center w-full h-full py-2"
+              className="hover:bg-gray-100/25  flex justify-center items-center w-full h-full py-3 gap-2"
             >
-              Profile
+              <FiUser size={24} />
+              <span>Profile</span>
             </button>
             <button
               onClick={() => handleClick("/favorites")}
-              className="hover:bg-secondary-color flex justify-center items-center w-full h-full py-2"
+              className="hover:bg-gray-100/25  flex justify-center items-center w-full h-full py-3 gap-2"
             >
-              Favorites
+              <MdOutlineFavoriteBorder size={24} />
+              <span>Favorites</span>
             </button>
             <button
               onClick={() => handleClick("/cart")}
-              className="hover:bg-secondary-color flex justify-center items-center w-full h-full py-2"
+              className="hover:bg-gray-100/25 flex justify-center items-center w-full h-full py-3 gap-2"
             >
-              Cart
+              <FiShoppingCart size={24} />
+              <span>Cart</span>
             </button>
             <button
               onClick={handleLogout}
-              className="hover:bg-secondary-color flex justify-center items-center w-full h-full  pt-2 pb-4"
+              className="hover:bg-gray-100/25  flex justify-center items-center w-full h-full  pt-3 pb-4 gap-2"
             >
-              Logout
+              <CiLogout size={24} />
+              <span>Logout</span>
             </button>
-          </>
+          </div>
         )}
       </div>
     </button>
