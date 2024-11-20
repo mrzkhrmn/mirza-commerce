@@ -9,7 +9,17 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     addToWishlist: (state, action) => {
-      state.wishlist = [...state.wishlist, action.payload];
+      const inCart = state.wishlist.find(
+        (item) => item._id === action.payload._id
+      );
+
+      if (inCart) {
+        state.wishlist = state.wishlist.filter(
+          (item) => item._id !== action.payload._id
+        );
+      } else {
+        state.wishlist = [...state.wishlist, action.payload];
+      }
     },
   },
 });
