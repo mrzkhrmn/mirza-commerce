@@ -11,7 +11,7 @@ import { Footer } from "./components/Footer";
 
 function App() {
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-full flex flex-col">
       <Header />
       <main className="flex-1">
         {" "}

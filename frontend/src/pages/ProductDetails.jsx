@@ -31,13 +31,13 @@ export const ProductDetails = () => {
                 <img
                   onClick={() => setSelectedImage(image)}
                   key={index}
-                  className="object-contain w-44 h-32 bg-gray-100"
+                  className="object-contain w-44 h-32 bg-gray-200"
                   src={image}
                   alt=""
                 />
               ))}
             </div>
-            <div className="w-[500px] h-full flex items-center  bg-gray-100">
+            <div className="w-[500px] h-full flex items-center  bg-gray-200">
               <img className=" object-contain" src={selectedImage} alt="" />
             </div>
             <div className="max-w-[400px]">
@@ -48,29 +48,45 @@ export const ProductDetails = () => {
                   ({product.ratings.length} reviews)
                 </p>
                 <p>
-                  | <span className="text-green-500">In Stock</span>
+                  |{" "}
+                  {product.stock > 0 || product.attributes.sizes.length > 0 ? (
+                    <span className="text-green-500">In Stock</span>
+                  ) : (
+                    <span className="text-red-500">Out of Stock</span>
+                  )}
                 </p>
               </div>
               <p className="text-2xl font-light mt-2 mb-4">${product.price}</p>
               <p>{product.description}</p>
               <div className="w-full bg-black/50 h-[2px] my-4"></div>
-              {product.attributes.colors && (
+              {product.attributes.colours.length > 0 && (
                 <div className="flex items-center gap-8">
                   <p className="text-xl font-light">Colours:</p>
                   <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-full bg-red-500 border border-black"></div>
-                    <div className="w-5 h-5 rounded-full bg-gray-200 border border-black"></div>
+                    {product.attributes.colours.map((color, index) => (
+                      <div
+                        key={index}
+                        className={`w-5 h-5 rounded-full ${
+                          color === "black" || color === "white"
+                            ? `bg-${color}`
+                            : color === "blue"
+                            ? `bg-${color}-200`
+                            : `bg-${color}-500`
+                        } border border-black`}
+                      ></div>
+                    ))}
                   </div>
                 </div>
               )}
-              {product.attributes.size && (
+              {product.attributes.sizes.length > 0 && (
                 <div className="flex items-center gap-8 my-5">
                   <p className="text-xl font-light">Size:</p>
                   <div className="flex items-center gap-4">
-                    {product.attributes.size.map((size, index) => (
+                    {product.attributes.sizes.map(({ size, stock }, index) => (
                       <button
+                        disabled={stock <= 0}
                         key={index}
-                        className="py-1 px-2 border border-black hover:bg-primary-color hover:text-white transition duration-200"
+                        className="py-1 px-2 border border-black hover:bg-primary-color hover:text-white transition duration-200 disabled:opacity-30 disabled:pointer-events-none"
                       >
                         {size}
                       </button>
@@ -90,7 +106,12 @@ export const ProductDetails = () => {
                     +
                   </button>
                 </div>
-                <button className="rounded-lg border border-black hover:border-primary-color px-8 py-1 text-lg font-light bg-primary-color hover:bg-secondary-color text-white transition duration-200">
+                <button
+                  disabled={
+                    product.attributes.sizes.length <= 0 && product.stock <= 0
+                  }
+                  className="rounded-lg border border-black hover:border-primary-color px-8 py-1 text-lg font-light bg-primary-color hover:bg-secondary-color text-white transition duration-200 disabled:opacity-50 disabled:pointer-events-none"
+                >
                   Buy Now
                 </button>
                 <button className="rounded-lg hover:border-primary-color border border-black px-2 py-2 hover:bg-primary-color hover:text-white transition duration-200">

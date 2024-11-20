@@ -10,6 +10,8 @@ export const data = [
     images: [
       "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
       "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
+      "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
+      "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
     ],
     attributes: {
       sizes: [
@@ -32,6 +34,8 @@ export const data = [
     images: [
       "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
       "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
+      "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
+      "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
     ],
     attributes: {
       sizes: [],
@@ -47,6 +51,8 @@ export const data = [
     stock: 0,
     description: "Lightweight and comfortable running shoes for all terrains.",
     images: [
+      "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
+      "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
       "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
       "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
     ],
@@ -70,10 +76,13 @@ export const data = [
     description: "Durable leather wallet with multiple compartments.",
     images: [
       "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
+      "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
+      "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
+      "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
     ],
     attributes: {
       sizes: [],
-      colours: ["brown", "black"],
+      colours: ["red", "black"],
     },
   },
   {
@@ -87,13 +96,15 @@ export const data = [
     images: [
       "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
       "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
+      "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
+      "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
     ],
     attributes: {
       sizes: [
         { size: "S", stock: 10 },
         { size: "M", stock: 20 },
         { size: "L", stock: 15 },
-        { size: "XL", stock: 5 },
+        { size: "XL", stock: 0 },
       ],
       colours: ["black", "white", "blue"],
     },
@@ -104,9 +115,11 @@ export const data = [
     category: "Mouse",
     discountPercentage: 15,
     ratings: [4, 5, 2, 1],
-    stock: 100,
+    stock: 0,
     description: "Ergonomic wireless mouse with a 2-year battery life.",
     images: [
+      "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
+      "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
       "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
       "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
     ],
@@ -124,6 +137,8 @@ export const data = [
     stock: 0,
     description: "Lightweight and comfortable running shoes for all terrains.",
     images: [
+      "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
+      "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
       "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
       "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
     ],
@@ -147,10 +162,13 @@ export const data = [
     description: "Durable leather wallet with multiple compartments.",
     images: [
       "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
+      "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
+      "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
+      "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
     ],
     attributes: {
       sizes: [],
-      colours: ["brown", "black"],
+      colours: ["red", "black"],
     },
   },
 ];

@@ -10,7 +10,7 @@ export const Header = () => {
   const navClass = "left-0 w-0 group-hover:left-1/2 group-hover:w-full";
 
   return (
-    <header className="w-full shadow-md">
+    <header className="w-full shadow-md sticky top-0 z-50 bg-white">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-4">
         <Link to={"/"}>
           <h1 className=" md:text-2xl text-xl">M-Commerce.</h1>
@@ -76,8 +76,8 @@ export const Header = () => {
             <input
               type="text"
               id="searchTerm"
-              placeholder="search for your need"
-              className="bg-gray-200 py-1 px-2 focus:outline-none rounded-md"
+              placeholder="Search for your need"
+              className="bg-gray-200 py-2 px-3 focus:outline-none rounded-md w-64"
             />
             <button className="absolute right-2 top-2">
               <FiSearch />
