@@ -1,10 +1,10 @@
-import { CiHeart } from "react-icons/ci";
 import { Stars } from "../components/Stars";
 import { TbTruckDelivery } from "react-icons/tb";
 import { GiRecycle } from "react-icons/gi";
 import { useParams } from "react-router-dom";
 import { useGetProductQuery } from "../redux/api/productApiSlice";
 import { useEffect, useState } from "react";
+import { WishlistButton } from "../components/WishlistButton";
 
 export const ProductDetails = () => {
   const { id } = useParams();
@@ -114,9 +114,13 @@ export const ProductDetails = () => {
                 >
                   Buy Now
                 </button>
-                <button className="rounded-lg hover:border-primary-color border border-black px-2 py-2 hover:bg-primary-color hover:text-white transition duration-200">
-                  <CiHeart size={24} />
-                </button>
+                <WishlistButton
+                  size={24}
+                  productToWish={product}
+                  style={
+                    "rounded-lg hover:border-primary-color border border-black px-2 py-2 hover:bg-primary-color hover:text-white transition duration-200"
+                  }
+                />
               </div>
               <div className="mt-10 border border-black">
                 <div className="flex items-center ">

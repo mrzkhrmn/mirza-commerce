@@ -1,7 +1,7 @@
 import { Stars } from "../Stars";
-import { CiHeart } from "react-icons/ci";
 import { IoEyeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { WishlistButton } from "../WishlistButton";
 
 export const ProductCard = ({ product }) => {
   const { _id, title, price, images, discountPercentage, ratings } = product;
@@ -35,9 +35,12 @@ export const ProductCard = ({ product }) => {
             -{discountPercentage}%
           </span>
         )}
-        <button className="absolute top-2 rounded-full right-2 bg-white text-xl px-2  py-1 text-black">
-          <CiHeart />
-        </button>
+        <WishlistButton
+          productToWish={product}
+          style={
+            "absolute top-2 rounded-full right-2 bg-white text-xl px-2  py-1 text-black"
+          }
+        />
         <button className="absolute top-12 rounded-full right-2 bg-white text-xl px-2  py-1 text-black">
           <IoEyeOutline />
         </button>
