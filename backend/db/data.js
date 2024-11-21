@@ -2,7 +2,7 @@ export const data = [
   {
     title: "Basic Cotton T-Shirt",
     price: 19.99,
-    category: "clothing",
+    category: "673dbfabe73f709aace7732b",
     discountPercentage: 10,
     ratings: [5, 4, 3],
     stock: 0,
@@ -15,10 +15,10 @@ export const data = [
     ],
     attributes: {
       sizes: [
-        { size: "S", stock: 10 },
-        { size: "M", stock: 20 },
-        { size: "L", stock: 15 },
-        { size: "XL", stock: 5 },
+        { size: "S", stock: 0 },
+        { size: "M", stock: 0 },
+        { size: "L", stock: 0 },
+        { size: "XL", stock: 0 },
       ],
       colours: ["black", "white", "blue"],
     },
@@ -26,7 +26,7 @@ export const data = [
   {
     title: "Wireless Mouse",
     price: 29.99,
-    category: "Mouse",
+    category: "673dbfa3e73f709aace77328",
     discountPercentage: 15,
     ratings: [4, 5],
     stock: 100,
@@ -45,7 +45,7 @@ export const data = [
   {
     title: "Running Shoes",
     price: 49.99,
-    category: "Shoes",
+    category: "673dbfafe73f709aace7732e",
     discountPercentage: 5,
     ratings: [5, 5, 4, 3],
     stock: 0,
@@ -69,7 +69,7 @@ export const data = [
   {
     title: "Leather Wallet",
     price: 24.99,
-    category: "Daily",
+    category: "673dbfbce73f709aace77331",
     discountPercentage: 0,
     ratings: [4, 4, 5],
     stock: 50,
@@ -88,7 +88,7 @@ export const data = [
   {
     title: "Good Cotton T-Shirt",
     price: 29.99,
-    category: "Clothing",
+    category: "673dbfabe73f709aace7732b",
     discountPercentage: 0,
     ratings: [5, 4, 3, 5],
     stock: 0,
@@ -112,7 +112,7 @@ export const data = [
   {
     title: "Good Wireless Mouse",
     price: 39.99,
-    category: "Mouse",
+    category: "673dbfa3e73f709aace77328",
     discountPercentage: 15,
     ratings: [4, 5, 2, 1],
     stock: 0,
@@ -131,7 +131,7 @@ export const data = [
   {
     title: "Good Running Shoes",
     price: 59.99,
-    category: "Shoes",
+    category: "673dbfafe73f709aace7732e",
     discountPercentage: 5,
     ratings: [5, 5, 4, 3, 1, 2],
     stock: 0,
@@ -155,7 +155,7 @@ export const data = [
   {
     title: "BestLeather Wallet",
     price: 44.99,
-    category: "Daily",
+    category: "673dbfbce73f709aace77331",
     discountPercentage: 0,
     ratings: [4, 4, 5],
     stock: 50,

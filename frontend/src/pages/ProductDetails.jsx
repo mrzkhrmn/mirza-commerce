@@ -110,7 +110,7 @@ export const ProductDetails = () => {
                 </div>
                 <button
                   disabled={
-                    product.attributes.sizes.length <= 0 && product.stock <= 0
+                    product.attributes.sizes.length === 0 && product.stock === 0
                   }
                   className="rounded-lg border border-black hover:border-primary-color px-8 py-1 text-lg font-light bg-primary-color hover:bg-secondary-color text-white transition duration-200 disabled:opacity-50 disabled:pointer-events-none"
                 >

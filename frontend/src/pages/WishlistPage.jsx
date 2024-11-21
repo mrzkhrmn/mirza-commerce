@@ -1,8 +1,16 @@
 import { useSelector } from "react-redux";
 import { ProductCard } from "../components/product/ProductCard";
 import { Breadcrumbs } from "../components/Breadcrumbs";
+import { useGetRelatedProductsQuery } from "../redux/api/productApiSlice";
 
 export const WishlistPage = ({ wishlist }) => {
+  const uniqueCategories = [...new Set(wishlist.map((item) => item.category))]; // yeni bir category arrayi oluturma wishlistten aldigimiz
+
+  const { data: relatedProducts } = useGetRelatedProductsQuery(
+    uniqueCategories,
+    { skip: uniqueCategories.length === 0 }
+  ); // Eğer kategori yoksa API çağrısını atla
+
   return (
     <div className="h-screen w-full">
       <div className="max-w-7xl mx-auto">
@@ -23,17 +31,24 @@ export const WishlistPage = ({ wishlist }) => {
           </div>
         )}
 
-        <div className="w-full mt-20">
-          <div className="flex items-end justify-between">
-            <div>
-              {" "}
-              <div className="flex items-center gap-2">
-                <div className="bg-primary-color w-6 h-10 rounded-lg"></div>
-                <h3 className="text-xl  text-primary-color">Related Item</h3>
+        {uniqueCategories.length > 0 && (
+          <div className="w-full mt-20">
+            <div className="flex items-end justify-between">
+              <div>
+                {" "}
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="bg-primary-color w-6 h-10 rounded-lg"></div>
+                  <h3 className="text-xl  text-primary-color">Related Item</h3>
+                </div>
+                <div className="grid grid-cols-4 gap-6 mb-20">
+                  {relatedProducts.map((product) => (
+                    <ProductCard key={product._id} product={product} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

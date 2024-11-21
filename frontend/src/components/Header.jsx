@@ -86,9 +86,11 @@ export const Header = ({ wishlist }) => {
           {user && (
             <Link to={"/wishlist"} className="relative">
               <IoMdHeartEmpty size={30} />
-              <span className="absolute -right-1.5 -top-1.5 text-white bg-primary-color text-[0.7rem] rounded-full py-0.5 px-1">
-                {wishlist.length}
-              </span>
+              {wishlist.length > 0 && (
+                <span className="absolute -right-1.5 -top-1.5 text-white bg-primary-color text-[0.7rem] rounded-full py-0.5 px-1">
+                  {wishlist.length}
+                </span>
+              )}
             </Link>
           )}
           <Link to={"/cart"} className="relative">

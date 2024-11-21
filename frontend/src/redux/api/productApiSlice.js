@@ -23,6 +23,13 @@ export const productApiSLice = apiSlice.injectEndpoints({
         url: `${PRODUCT_URL}/explore`,
       }),
     }),
+    getRelatedProducts: builder.query({
+      query: (categories) => ({
+        url: `${PRODUCT_URL}/related`,
+        method: "POST",
+        body: { categories },
+      }),
+    }),
   }),
 });
 
@@ -31,4 +38,5 @@ export const {
   useGetBestSellingProductsQuery,
   useGetFlashSalesProductsQuery,
   useGetExploreProductsQuery,
+  useGetRelatedProductsQuery,
 } = productApiSLice;

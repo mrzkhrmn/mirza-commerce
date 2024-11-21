@@ -3,7 +3,7 @@ import { Product } from "../models/productModel.js";
 export const getProductById = async (req, res) => {
   try {
     const { id } = req.params;
-    const product = await Product.findById(id);
+    const product = await Product.findById(id).populate("category", "name");
 
     if (product === null)
       return res.status(404).json({ message: "Product not found!" });
@@ -62,5 +62,22 @@ export const getExploreProducts = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
     console.log(`Error in getBestSellingProducts ${error.message}`);
+  }
+};
+
+export const getRelatedProducts = async (req, res) => {
+  try {
+    const { categories } = req.body;
+    const products = await Product.find({
+      category: { $in: categories },
+    }).limit(4);
+
+    if (products === null)
+      return res.status(404).json({ message: "Product not found!" });
+
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+    console.log(`Error in getRelatedProducts ${error.message}`);
   }
 };
