@@ -9,7 +9,6 @@ export const WishlistButton = ({ productToWish, style, size }) => {
 
   const inWishlist = wishlist.find((item) => item._id === productToWish._id);
 
-  console.log(wishlist);
   return (
     <button
       onClick={() => dispatch(addToWishlist(productToWish))}

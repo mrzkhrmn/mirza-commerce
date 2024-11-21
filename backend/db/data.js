@@ -2,7 +2,7 @@ export const data = [
   {
     title: "Basic Cotton T-Shirt",
     price: 19.99,
-    category: "Clothing",
+    category: "clothing",
     discountPercentage: 10,
     ratings: [5, 4, 3],
     stock: 0,

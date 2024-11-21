@@ -4,7 +4,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { UserButton } from "./Header/UserButton";
 
-export const Header = () => {
+export const Header = ({ wishlist }) => {
   const user = true;
   const activeNavClass = "left-0 w-full ";
   const navClass = "left-0 w-0 group-hover:left-1/2 group-hover:w-full";
@@ -87,7 +87,7 @@ export const Header = () => {
             <Link to={"/wishlist"} className="relative">
               <IoMdHeartEmpty size={30} />
               <span className="absolute -right-1.5 -top-1.5 text-white bg-primary-color text-[0.7rem] rounded-full py-0.5 px-1">
-                4
+                {wishlist.length}
               </span>
             </Link>
           )}
