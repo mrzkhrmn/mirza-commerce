@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useGetProductQuery } from "../redux/api/productApiSlice";
 import { useEffect, useState } from "react";
 import { WishlistButton } from "../components/WishlistButton";
+import { Breadcrumbs } from "../components/Breadcrumbs";
 
 export const ProductDetails = () => {
   const { id } = useParams();
@@ -25,6 +26,7 @@ export const ProductDetails = () => {
     product && (
       <div className="w-full h-screen">
         <div className="max-w-7xl mx-auto py-10">
+          <Breadcrumbs />
           <div className="flex justify-center gap-6 mt-20 h-[648px]">
             <div className="flex flex-col gap-2 items-center justify-between h-full">
               {product.images.map((image, index) => (

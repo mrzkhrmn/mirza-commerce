@@ -1,10 +1,12 @@
 import { useSelector } from "react-redux";
 import { ProductCard } from "../components/product/ProductCard";
+import { Breadcrumbs } from "../components/Breadcrumbs";
 
 export const WishlistPage = ({ wishlist }) => {
   return (
     <div className="h-screen w-full">
       <div className="max-w-7xl mx-auto">
+        <Breadcrumbs />
         <div className="flex items-center justify-between mt-20">
           <h2 className="text-2xl font-light">Wishlist ({wishlist.length})</h2>
           <button className="text-lg border border-black/80 font-light px-10 py-3">
