@@ -1,8 +1,6 @@
-import { useSelector } from "react-redux";
 import { ProductCard } from "../components/product/ProductCard";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { useGetRelatedProductsQuery } from "../redux/api/productApiSlice";
-import { isAllOf } from "@reduxjs/toolkit";
 
 export const WishlistPage = ({ wishlist }) => {
   const uniqueCategories = [...new Set(wishlist.map((item) => item.category))]; // yeni bir category arrayi oluturma wishlistten aldigimiz
