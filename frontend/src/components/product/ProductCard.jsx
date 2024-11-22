@@ -16,11 +16,11 @@ export const ProductCard = ({ product }) => {
   ).toFixed(2);
   const rating = ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length;
 
-  const itemInCart = cartItems.find((item) => item._id === product._id);
-
   function handleAddToCart(item, quantity = 1) {
-    dispatch(addToCart({ item, quantity }));
+    dispatch(addToCart({ ...item, quantity }));
   }
+
+  const itemInCart = cartItems.find((item) => item._id === product._id);
 
   return (
     <div className="">

@@ -13,9 +13,10 @@ import { useSelector } from "react-redux";
 
 function App() {
   const { wishlist } = useSelector((state) => state.user);
+  const { cartItems } = useSelector((state) => state.cart);
   return (
     <div className="h-full flex flex-col">
-      <Header wishlist={wishlist} />
+      <Header wishlist={wishlist} cartItems={cartItems} />
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomePage />} />
