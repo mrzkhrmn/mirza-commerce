@@ -6,12 +6,18 @@ import { useGetProductQuery } from "../redux/api/productApiSlice";
 import { useEffect, useState } from "react";
 import { WishlistButton } from "../components/WishlistButton";
 import { Breadcrumbs } from "../components/Breadcrumbs";
+import { useSelector } from "react-redux";
+import { useAddToCart } from "../hooks/useAddToCart.js";
 
 export const ProductDetails = () => {
   const { id } = useParams();
   const { data: product } = useGetProductQuery(id);
   const [selectedImage, setSelectedImage] = useState("");
   const [rating, setRating] = useState(0);
+
+  const { cartItems } = useSelector((state) => state.cart);
+
+  const addToCart = useAddToCart();
 
   useEffect(() => {
     if (product?.images.length > 0) {
@@ -22,6 +28,8 @@ export const ProductDetails = () => {
   }, [product]);
 
   console.log(rating);
+
+  const itemExists = cartItems.find((i) => i._id === product?._id);
   return (
     product && (
       <div className="w-full h-screen">
@@ -109,12 +117,13 @@ export const ProductDetails = () => {
                   </button>
                 </div>
                 <button
+                  onClick={() => addToCart(product)}
                   disabled={
                     product.attributes.sizes.length === 0 && product.stock === 0
                   }
                   className="rounded-lg border border-black hover:border-primary-color px-8 py-1 text-lg font-light bg-primary-color hover:bg-secondary-color text-white transition duration-200 disabled:opacity-50 disabled:pointer-events-none"
                 >
-                  Buy Now
+                  {itemExists ? "Remove from cart" : "Add to cart"}
                 </button>
                 <WishlistButton
                   size={24}

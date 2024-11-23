@@ -2,12 +2,10 @@ import { Stars } from "../Stars";
 import { IoEyeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { WishlistButton } from "../WishlistButton";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/slices/cartSlice";
+import { useSelector } from "react-redux";
+import { useAddToCart } from "../../hooks/useAddToCart.js";
 
 export const ProductCard = ({ product }) => {
-  const dispatch = useDispatch();
-
   const { cartItems } = useSelector((state) => state.cart);
   const { _id, title, price, images, discountPercentage, ratings } = product;
 
@@ -16,9 +14,7 @@ export const ProductCard = ({ product }) => {
   ).toFixed(2);
   const rating = ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length;
 
-  function handleAddToCart(item, quantity = 1) {
-    dispatch(addToCart({ ...item, quantity }));
-  }
+  const addToCart = useAddToCart();
 
   const itemInCart = cartItems.find((item) => item._id === product._id);
 
@@ -37,7 +33,7 @@ export const ProductCard = ({ product }) => {
             className="absolute bottom-0 left-0 w-full bg-black text-white text-center 
             transition-all duration-300 ease-in-out h-0 opacity-0 pointer-events-none 
             group-hover:h-10 group-hover:opacity-100 group-hover:pointer-events-auto z-50"
-            onClick={() => handleAddToCart(product)}
+            onClick={() => addToCart(product)}
           >
             {itemInCart ? "In Cart" : "Add To Cart"}
           </button>
