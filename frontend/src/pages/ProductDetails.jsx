@@ -15,11 +15,22 @@ export const ProductDetails = () => {
   const { data: product } = useGetProductQuery(id);
   const [selectedImage, setSelectedImage] = useState("");
   const [rating, setRating] = useState(0);
-
+  const [quantity, setQuantity] = useState(1);
   const { cartItems } = useSelector((state) => state.cart);
 
   const addToCart = useAddToCart();
   const hasStock = useHasStock();
+
+  const handleQuantity = (str) => {
+    if (str === "inc") {
+      setQuantity((quantity) => quantity + 1);
+    } else if (str === "dec") {
+      setQuantity((quantity) => quantity - 1);
+      if (quantity < 2) {
+        setQuantity(1);
+      }
+    }
+  };
 
   useEffect(() => {
     if (product?.images.length > 0) {
@@ -28,8 +39,6 @@ export const ProductDetails = () => {
       setRating(sumRatings / product.ratings.length);
     }
   }, [product]);
-
-  console.log(rating);
 
   const itemExists = cartItems.find((i) => i._id === product?._id);
   return (
@@ -107,18 +116,24 @@ export const ProductDetails = () => {
               )}
               <div className="flex items-center justify-between">
                 <div className="flex items-center text-xl">
-                  <button className="border border-black px-4 py-1 hover:bg-primary-color hover:text-white transition duration-200">
+                  <button
+                    onClick={() => handleQuantity("dec")}
+                    className="border border-black px-4 py-1 hover:bg-primary-color hover:text-white transition duration-200"
+                  >
                     -
                   </button>
                   <span className="border-t border-b border-black px-8 py-1">
-                    2
+                    {quantity}
                   </span>
-                  <button className="border border-black px-4 py-1 hover:bg-primary-color hover:text-white transition duration-200">
+                  <button
+                    onClick={() => handleQuantity("inc")}
+                    className="border border-black px-4 py-1 hover:bg-primary-color hover:text-white transition duration-200"
+                  >
                     +
                   </button>
                 </div>
                 <button
-                  onClick={() => addToCart(product)}
+                  onClick={() => addToCart(product, quantity)}
                   disabled={!hasStock(product)}
                   className="rounded-lg border border-black hover:border-primary-color px-8 py-1 text-lg font-light bg-primary-color hover:bg-secondary-color text-white transition duration-200 disabled:opacity-50 disabled:pointer-events-none"
                 >
