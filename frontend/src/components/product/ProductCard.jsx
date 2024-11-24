@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { WishlistButton } from "../WishlistButton";
 import { useSelector } from "react-redux";
 import { useAddToCart } from "../../hooks/useAddToCart.js";
+import { useHasStock } from "../../hooks/useHasStock.js";
 
 export const ProductCard = ({ product }) => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -15,6 +16,8 @@ export const ProductCard = ({ product }) => {
   const rating = ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length;
 
   const addToCart = useAddToCart();
+
+  const hasStock = useHasStock();
 
   const itemInCart = cartItems.find((item) => item._id === product._id);
 
@@ -29,14 +32,16 @@ export const ProductCard = ({ product }) => {
               alt="Product Image"
             />
           </Link>
-          <button
-            className="absolute bottom-0 left-0 w-full bg-black text-white text-center 
+          {hasStock(product) && (
+            <button
+              className="absolute bottom-0 left-0 w-full bg-black text-white text-center 
             transition-all duration-300 ease-in-out h-0 opacity-0 pointer-events-none 
             group-hover:h-10 group-hover:opacity-100 group-hover:pointer-events-auto z-50"
-            onClick={() => addToCart(product)}
-          >
-            {itemInCart ? "In Cart" : "Add To Cart"}
-          </button>
+              onClick={() => addToCart(product)}
+            >
+              {itemInCart ? "In Cart" : "Add To Cart"}
+            </button>
+          )}
         </div>
         {discountPercentage > 0 && (
           <span className="absolute top-2 left-2 bg-primary-color px-2  py-1 text-sm text-white">

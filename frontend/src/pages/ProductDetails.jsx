@@ -8,6 +8,7 @@ import { WishlistButton } from "../components/WishlistButton";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { useSelector } from "react-redux";
 import { useAddToCart } from "../hooks/useAddToCart.js";
+import { useHasStock } from "../hooks/useHasStock.js";
 
 export const ProductDetails = () => {
   const { id } = useParams();
@@ -18,6 +19,7 @@ export const ProductDetails = () => {
   const { cartItems } = useSelector((state) => state.cart);
 
   const addToCart = useAddToCart();
+  const hasStock = useHasStock();
 
   useEffect(() => {
     if (product?.images.length > 0) {
@@ -58,8 +60,7 @@ export const ProductDetails = () => {
                   ({product.ratings.length} reviews)
                 </p>
                 <p>
-                  |{" "}
-                  {product.stock > 0 || product.attributes.sizes.length > 0 ? (
+                  {hasStock(product) ? (
                     <span className="text-green-500">In Stock</span>
                   ) : (
                     <span className="text-red-500">Out of Stock</span>
@@ -118,9 +119,7 @@ export const ProductDetails = () => {
                 </div>
                 <button
                   onClick={() => addToCart(product)}
-                  disabled={
-                    product.attributes.sizes.length === 0 && product.stock === 0
-                  }
+                  disabled={!hasStock(product)}
                   className="rounded-lg border border-black hover:border-primary-color px-8 py-1 text-lg font-light bg-primary-color hover:bg-secondary-color text-white transition duration-200 disabled:opacity-50 disabled:pointer-events-none"
                 >
                   {itemExists ? "Remove from cart" : "Add to cart"}
