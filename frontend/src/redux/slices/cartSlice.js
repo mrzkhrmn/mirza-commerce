@@ -10,14 +10,17 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
       const item = action.payload;
 
-      const itemExists = state.cartItems.find((i) => item._id === i._id);
+      // Ürün ID'si ve boyutuna göre kontrol
+      const itemExists = state.cartItems.find(
+        (i) => i._id === item._id && i.size === item.size
+      );
 
       if (itemExists) {
         state.cartItems = state.cartItems.filter(
           (i) => itemExists._id !== i._id
         );
       } else {
-        state.cartItems = [...state.cartItems, item];
+        state.cartItems.push({ ...item, quantity: 1 });
       }
     },
   },

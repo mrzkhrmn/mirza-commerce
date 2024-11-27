@@ -37,7 +37,13 @@ export const ProductCard = ({ product }) => {
               className="absolute bottom-0 left-0 w-full bg-black text-white text-center 
             transition-all duration-300 ease-in-out h-0 opacity-0 pointer-events-none 
             group-hover:h-10 group-hover:opacity-100 group-hover:pointer-events-auto z-50"
-              onClick={() => addToCart(product)}
+              onClick={() =>
+                addToCart(
+                  product,
+                  1,
+                  product.attributes?.sizes[0]?.size || false
+                )
+              }
             >
               {itemInCart ? "In Cart" : "Add To Cart"}
             </button>

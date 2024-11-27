@@ -14,6 +14,7 @@ export const ProductDetails = () => {
   const { id } = useParams();
   const { data: product } = useGetProductQuery(id);
   const [selectedImage, setSelectedImage] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
   const [rating, setRating] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const { cartItems } = useSelector((state) => state.cart);
@@ -40,7 +41,14 @@ export const ProductDetails = () => {
     }
   }, [product]);
 
-  const itemExists = cartItems.find((i) => i._id === product?._id);
+  console.log(selectedSize);
+
+  const isInCart = cartItems.some(
+    (item) =>
+      item._id === product?._id &&
+      (item.size === selectedSize || item.size === "unique")
+  );
+
   return (
     product && (
       <div className="w-full h-screen">
@@ -106,7 +114,10 @@ export const ProductDetails = () => {
                       <button
                         disabled={stock <= 0}
                         key={index}
-                        className="py-1 px-2 border border-black hover:bg-primary-color hover:text-white transition duration-200 disabled:opacity-30 disabled:pointer-events-none"
+                        onClick={() => setSelectedSize(size)}
+                        className={`${
+                          selectedSize == size && "bg-primary-color text-white"
+                        } py-1 px-2 border border-black hover:bg-primary-color hover:text-white transition duration-200 disabled:opacity-30 disabled:pointer-events-none`}
                       >
                         {size}
                       </button>
@@ -133,11 +144,17 @@ export const ProductDetails = () => {
                   </button>
                 </div>
                 <button
-                  onClick={() => addToCart(product, quantity)}
+                  onClick={() =>
+                    addToCart(
+                      product,
+                      quantity,
+                      selectedSize || product.attributes?.sizes[0]?.size
+                    )
+                  }
                   disabled={!hasStock(product)}
                   className="rounded-lg border border-black hover:border-primary-color px-8 py-1 text-lg font-light bg-primary-color hover:bg-secondary-color text-white transition duration-200 disabled:opacity-50 disabled:pointer-events-none"
                 >
-                  {itemExists ? "Remove from cart" : "Add to cart"}
+                  {isInCart ? "Remove from cart" : "Add to cart"}
                 </button>
                 <WishlistButton
                   size={24}
