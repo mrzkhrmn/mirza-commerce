@@ -19,7 +19,11 @@ export const ProductCard = ({ product }) => {
 
   const hasStock = useHasStock();
 
-  const itemInCart = cartItems.find((item) => item._id === product._id);
+  const isInCart = cartItems.some(
+    (item) =>
+      item._id === product?._id &&
+      (item.size === product.size || item.size === "unique")
+  );
 
   return (
     <div className="">
@@ -45,7 +49,7 @@ export const ProductCard = ({ product }) => {
                 )
               }
             >
-              {itemInCart ? "In Cart" : "Add To Cart"}
+              {isInCart ? "In Cart" : "Add To Cart"}
             </button>
           )}
         </div>

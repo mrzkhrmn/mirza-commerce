@@ -17,7 +17,7 @@ const cartSlice = createSlice({
 
       if (itemExists) {
         state.cartItems = state.cartItems.filter(
-          (i) => itemExists._id !== i._id
+          (i) => !(i._id === item._id && i.size === item.size)
         );
       } else {
         state.cartItems.push({ ...item, quantity: 1 });
