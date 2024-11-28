@@ -41,7 +41,7 @@ export const ProductDetails = () => {
     }
   }, [product]);
 
-  console.log(selectedSize);
+  console.log(quantity);
 
   const isInCart = cartItems.some(
     (item) =>

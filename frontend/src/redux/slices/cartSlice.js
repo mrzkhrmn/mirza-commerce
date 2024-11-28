@@ -20,7 +20,7 @@ const cartSlice = createSlice({
           (i) => !(i._id === item._id && i.size === item.size)
         );
       } else {
-        state.cartItems.push({ ...item, quantity: 1 });
+        state.cartItems.push({ ...item });
       }
     },
   },
