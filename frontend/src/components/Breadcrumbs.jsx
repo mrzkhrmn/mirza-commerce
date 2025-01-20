@@ -9,6 +9,7 @@ export const Breadcrumbs = () => {
     product: "Product",
     category: "Category",
     wishlist: "Wishlist",
+    cart: "Cart",
   };
 
   // Alfanümerik bir ID olup olmadığını kontrol eden regex

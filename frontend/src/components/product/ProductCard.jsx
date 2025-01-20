@@ -19,11 +19,7 @@ export const ProductCard = ({ product }) => {
 
   const hasStock = useHasStock();
 
-  const isInCart = cartItems.some(
-    (item) =>
-      item._id === product?._id &&
-      (item.size === product.size || item.size === "unique")
-  );
+  const isInCart = cartItems.some((item) => item._id === product?._id);
 
   return (
     <div className="">

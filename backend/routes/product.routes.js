@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  getAllProducts,
   getBestSellingProducts,
   getExploreProducts,
   getFlashSalesProducts,
@@ -9,6 +10,7 @@ import {
 
 const router = express.Router();
 
+router.get("/product", getAllProducts);
 router.get("/product/:id", getProductById);
 router.get("/best", getBestSellingProducts);
 router.get("/flash", getFlashSalesProducts);

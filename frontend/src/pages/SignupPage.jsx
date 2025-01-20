@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { Header } from "../components/Header";
 import { useDispatch } from "react-redux";
 import {
   signupFailure,
