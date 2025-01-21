@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Dashboard } from "../components/Dashboard";
 import { AdminProducts } from "../components/AdminProducts";
-import { AdminCategorys } from "../components/AdminCategorys";
+import { AdminCategories } from "../components/AdminCategories";
 import { AdminUsers } from "../components/AdminUsers";
 
 export const AdminDashboard = () => {
@@ -30,7 +30,7 @@ export const AdminDashboard = () => {
             onClick={() => setActiveTab("categorys")}
             className="hover:border-black border-transparent border-b"
           >
-            Categorys
+            Categories
           </button>
           <button
             onClick={() => setActiveTab("users")}
@@ -46,7 +46,7 @@ export const AdminDashboard = () => {
         ) : activeTab === "products" ? (
           <AdminProducts />
         ) : activeTab === "categorys" ? (
-          <AdminCategorys />
+          <AdminCategories />
         ) : (
           <AdminUsers />
         )}

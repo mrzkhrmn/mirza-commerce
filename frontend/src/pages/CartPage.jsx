@@ -3,8 +3,11 @@ import { Breadcrumbs } from "../components/Breadcrumbs";
 import { ProductCard } from "../components/product/ProductCard";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import { reset } from "../redux/slices/cartSlice";
+import { data } from "../../../backend/db/data";
+import { useState } from "react";
 
 export const CartPage = ({ cartItems }) => {
+  const [staticCartItems, setStaticCartItems] = useState(data.slice(0, 5));
   const { totalPrice } = useSelector((state) => state.cart);
   const notify = () => toast("Sale was completed successfully!");
 
@@ -42,9 +45,12 @@ export const CartPage = ({ cartItems }) => {
             <tr>Subtotal</tr>
           </thead>
           <tbody>
-            {cartItems.length > 0 &&
-              cartItems.map((product) => (
-                <tr className="flex items-center border border-black/50 py-2 px-4 text-start">
+            {staticCartItems.length > 0 &&
+              staticCartItems.map((product) => (
+                <tr
+                  key={product._id}
+                  className="flex items-center border border-black/50 py-2 px-4 text-start"
+                >
                   <td
                     key={product._id}
                     className="flex items-center gap-2 w-1/4"
@@ -79,15 +85,15 @@ export const CartPage = ({ cartItems }) => {
             <p className="font-semibold text-xl">Cart Total:</p>
             <div className="flex items-center justify-between gap-64 border-black border-b">
               <p>Subtotal:</p>
-              <p>{totalPrice}$</p>
+              <p>1200$</p>
             </div>
             <div className="flex items-center justify-between gap-64 border-black border-b">
               <p>Shipping:</p>
-              <p>Free</p>
+              <p>8%</p>
             </div>
             <div className="flex items-center justify-between gap-64">
               <p>Total</p>
-              <p>{totalPrice}$</p>
+              <p>1500$</p>
             </div>
 
             <button

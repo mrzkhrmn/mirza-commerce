@@ -1,7 +1,7 @@
 import { useGetAllProductsQuery } from "../redux/api/productApiSlice";
 
 export const AdminProducts = () => {
-  const { data: products, isLoading } = useGetAllProductsQuery();
+  //const { data: products, isLoading } = useGetAllProductsQuery();
   return (
     <div>
       <h1 className="text-3xl font-semibold border-b border-black text-primary-color">
@@ -77,6 +77,11 @@ export const AdminProducts = () => {
               placeholder="Enter description..."
             />
           </div>
+          <div className="w-full flex justify-end">
+            <button className="bg-primary-color text-white py-2 px-6 text-lg font-semibold rounded-lg ">
+              Create
+            </button>
+          </div>
         </form>
         <div className="w-full border-t border-black mt-4">
           <h2 className="text-3xl font-semibold  text-primary-color mt-4">
@@ -89,8 +94,11 @@ export const AdminProducts = () => {
               <tr>Actions</tr>
             </thead>
             <tbody>
-              {products.map((product) => (
-                <tr className="flex items-center justify-between w-full border border-black/50 py-2 px-4">
+              {/* {products.map((product) => (
+                <tr
+                  key={product._id}
+                  className="flex items-center justify-between w-full border border-black/50 py-2 px-4"
+                >
                   <td
                     key={product._id}
                     className="flex items-center gap-2 w-1/4"
@@ -108,7 +116,19 @@ export const AdminProducts = () => {
                     Delete
                   </button>
                 </tr>
-              ))}
+              ))} */}
+              <tr className="flex items-center justify-between w-full border border-black/50 py-2 px-4">
+                <td className="flex items-center justify-center gap-2 w-1/4">
+                  <span>{"Ayakkabı"}</span>
+                  <img className="w-12" alt="" />
+                </td>
+                <td className="flex items-center justify-center mr-24">
+                  {"220"}$
+                </td>
+                <button className="mr-32 text-red-500 hover:underline">
+                  Delete
+                </button>
+              </tr>
             </tbody>
           </table>
         </div>

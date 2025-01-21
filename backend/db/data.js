@@ -7,6 +7,8 @@ export const data = [
     ratings: [5, 4, 3],
     stock: 0,
     description: "Comfortable and breathable cotton t-shirt for daily wear.",
+    quantity: 2,
+    price: 125,
     images: [
       "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
       "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
@@ -31,6 +33,8 @@ export const data = [
     ratings: [4, 5],
     stock: 100,
     description: "Ergonomic wireless mouse with a 2-year battery life.",
+    quantity: 2,
+    price: 125,
     images: [
       "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
       "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
@@ -50,6 +54,8 @@ export const data = [
     ratings: [5, 5, 4, 3],
     stock: 0,
     description: "Lightweight and comfortable running shoes for all terrains.",
+    quantity: 2,
+    price: 125,
     images: [
       "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
       "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
@@ -74,6 +80,8 @@ export const data = [
     ratings: [4, 4, 5],
     stock: 50,
     description: "Durable leather wallet with multiple compartments.",
+    quantity: 2,
+    price: 125,
     images: [
       "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
       "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
@@ -93,6 +101,8 @@ export const data = [
     ratings: [5, 4, 3, 5],
     stock: 0,
     description: "Comfortable and breathable cotton t-shirt for daily wear.",
+    quantity: 2,
+    price: 125,
     images: [
       "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
       "https://images.teemill.com/2qczyrcpoxoa68qdd0nkyaedcaunbavwo0klypsssippxue2.png.png?w=1080&h=auto",
@@ -117,6 +127,8 @@ export const data = [
     ratings: [4, 5, 2, 1],
     stock: 0,
     description: "Ergonomic wireless mouse with a 2-year battery life.",
+    quantity: 2,
+    price: 125,
     images: [
       "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
       "https://png.pngtree.com/png-vector/20240625/ourlarge/pngtree-black-wireless-computer-mouse-png-image_12851844.png",
@@ -136,6 +148,8 @@ export const data = [
     ratings: [5, 5, 4, 3, 1, 2],
     stock: 0,
     description: "Lightweight and comfortable running shoes for all terrains.",
+    quantity: 2,
+    price: 125,
     images: [
       "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
       "https://static.vecteezy.com/system/resources/previews/036/625/143/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
@@ -160,6 +174,8 @@ export const data = [
     ratings: [4, 4, 5],
     stock: 50,
     description: "Durable leather wallet with multiple compartments.",
+    quantity: 2,
+    price: 125,
     images: [
       "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",
       "https://wallpapers.com/images/hd/leather-wallets-stacked-hq6xo9yj4rcap0wg-2.jpg",

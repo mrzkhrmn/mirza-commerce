@@ -31,7 +31,7 @@ export const FlashSales = () => {
             </div>
             <div className="flex items-end gap-8">
               <h1 className="text-4xl">Flash Sales</h1>
-              <CountdownTimer targetDate={"2024-11-31T12:00:00"} />
+              <CountdownTimer targetDate={"2025-01-30T12:00:00"} />
             </div>
           </div>
           <div className="flex items-end gap-2 text-black">
